@@ -3,9 +3,11 @@
 @section('content')
 
 <div class="container mb-5">
-    <h1 class="py-5"> Add Project </h1>
-    <form action="{{route('admin.projects.store')}}" method="post" class="card p-3">
+    <h1 class="py-5"> Edit Project: {{$project->title}}</h1>
+    <form action="{{route('admin.projects.update', $project->slug)}}" method="post" class="project p-3">
         @csrf
+        @method('PUT')
+
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="title" id="title" class="form-control" placeholder="player name" aria-describedby="nameHelper">
