@@ -26,7 +26,7 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'title' => ['required', Rule::unique('projects')->ignore($this->project->id), 'min:5', 'max:150'],
-            'thumb' => 'required|max:150',
+            'thumb' => 'nullable|image|max:150',
             'language' => 'required|max:20',
         ];
     }
@@ -38,7 +38,7 @@ class UpdateProjectRequest extends FormRequest
             'title.unique' => 'Il titolo è univoco',
             'title.min' => 'Il titolo deve essere di almeno :min caratteri',
             'title.max' => 'Il titolo deve essere di :max caratteri',
-            'thumb.required' => 'L\'immagine è obbligatoria',
+            'thumb.image' => 'L\'immagine deve essere di tipo image',
             'thumb.max' => 'L\'immagine deve essere di :max caratteri',
             'language.required' => 'Il linguaggio del codice è obbligatorio',
             'language.max' => 'Il linguaggio del codice deve essere di :max caratteri',
