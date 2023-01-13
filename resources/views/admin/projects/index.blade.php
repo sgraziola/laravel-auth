@@ -43,7 +43,7 @@
                         <td scope="row">{{$project->id}}</td>
                         <td>{{$project->title}}</td>
                         <td>{{$project->slug}}</td>
-                        <td><img width="80" src="{{$project->thumb}}" alt="{{$project->title}}"></td>
+                        <td><img width="80" src="{{asset('storage/' . $project->thumb)}}" alt="{{$project->title}}"></td>
                         <td>{{$project->language}}</td>
                         <td class="d-flex flex-column gap-2">
                             <a href='{{route("admin.projects.show", $project->slug)}}' class="btn btn-primary view">
