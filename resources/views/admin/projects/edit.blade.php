@@ -5,7 +5,7 @@
 <div class="container mb-5">
     <h1 class="py-5"> Edit Project: {{$project->title}}</h1>
     @include('partials.error')
-    <form action="{{route('admin.projects.update', $project->slug)}}" method="post" class="project p-3">
+    <form action="{{route('admin.projects.update', $project->slug)}}" method="post" class="project p-3" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 

@@ -6,7 +6,7 @@
     <h1 class="py-5"> Add Project </h1>
     @include('partials.error')
 
-    <form action="{{route('admin.projects.store')}}" method="post" class="card p-3">
+    <form action="{{route('admin.projects.store')}}" method="post" class="card p-3" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label">Thumb</label>
-            <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="project thumb" aria-describedby="thumbHelper" value="{{old('thumb')}}">
+            <input type="file" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="project thumb" aria-describedby="thumbHelper">
             <small id="thumbHelper" class="text-muted">Add the project thumb here</small>
         </div>
         <div class="mb-3">
