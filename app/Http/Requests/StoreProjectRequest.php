@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title' => 'required|unique:projects,title|min: 5|max:150',
-            'thumb' => 'required|max:150',
+            'thumb' => 'required|image|max:250',
             'language' => 'required|max:20',
         ];
     }
@@ -38,7 +38,8 @@ class StoreProjectRequest extends FormRequest
             'title.min' => 'Il titolo deve essere di almeno :min caratteri',
             'title.max' => 'Il titolo deve essere di :max caratteri',
             'thumb.required' => 'L\'immagine è obbligatoria',
-            'thumb.max' => 'L\'immagine deve essere di :max caratteri',
+            'thumb.image' => 'L\'immagine deve essere di tipo image',
+            'thumb.max' => 'L\'immagine deve essere di :max kilobytes',
             'language.required' => 'Il linguaggio del codice è obbligatorio',
             'language.max' => 'Il linguaggio del codice deve essere di :max caratteri',
         ];
