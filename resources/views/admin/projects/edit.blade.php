@@ -16,8 +16,8 @@
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label">Thumb</label>
-            <input type="text" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="project thumb" aria-describedby="thumbHelper" value="{{$project->thumb}}">
-            <small id="thumbHelper" class="text-muted">Add the project thumb here</small>
+            <input type="file" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="project thumb" aria-describedby="thumbHelper">
+            <small id=" thumbHelper" class="text-muted">Add the project thumb here</small>
         </div>
         <div class="mb-3">
             <label for="language" class="form-label">Language</label>

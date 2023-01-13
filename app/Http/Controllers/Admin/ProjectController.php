@@ -50,6 +50,7 @@ class ProjectController extends Controller
 
         $project_slug = Project::generateSlug($val_data['title']);
         $val_data['slug'] = $project_slug;
+
         $project = Project::create($val_data);
 
         return to_route('admin.projects.index')->with('message', "$project->title added successfully");
@@ -87,8 +88,14 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $val_data = $request->validated();
+
+        $thumb = Storage::put('uploads', $val_data['thumb']);
+        //dd($thumb);
+        $val_data['thumb'] = $thumb;
+
         $project_slug = Project::generateSlug($val_data['title']);
         $val_data['slug'] = $project_slug;
+
         $project->update($val_data);
 
         return to_route('admin.projects.index')->with('message', "$project->title updated successfully");
