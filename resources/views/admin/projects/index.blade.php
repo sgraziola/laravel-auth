@@ -45,9 +45,9 @@
                         <td>{{$project->slug}}</td>
                         <td>
                             @if ($project->thumb)
-                            <img width="140" src="{{asset('storage/' . $project->thumb)}}" alt="{{$project->title}}">
+                            <img width="80" src="{{asset('storage/' . $project->thumb)}}" alt="{{$project->title}}">
                             @else
-                            <div class="placeholder-glow p-5 bg-secondary d-flex align-items-center justify-content-center" style="width: 140px;">Placeholder</div>
+                            <div class="placeholder-glow p-5 bg-secondary d-flex align-items-center justify-content-center" style="width: 80px;">Placeholder</div>
                             @endif
                         </td>
                         <td>{{$project->language}}</td>
