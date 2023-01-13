@@ -14,10 +14,13 @@
             <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" placeholder="project title" aria-describedby="titleHelper" value="{{$project->title}}">
             <small id="nameHelper" class="text-muted">Add the project name here</small>
         </div>
-        <div class="mb-3">
-            <label for="thumb" class="form-label">Thumb</label>
-            <input type="file" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="project thumb" aria-describedby="thumbHelper">
-            <small id=" thumbHelper" class="text-muted">Add the project thumb here</small>
+        <div class="mb-3 d-flex gap-4">
+            <img width="140" src="{{asset('storage/' . $project->thumb)}}" alt="">
+            <div>
+                <label for="thumb" class="form-label">Replace Thumb</label>
+                <input type="file" name="thumb" id="thumb" class="form-control @error('thumb') is-invalid @enderror" placeholder="project thumb" aria-describedby="thumbHelper">
+                <small id=" thumbHelper" class="text-muted">Add the project thumb here</small>
+            </div>
         </div>
         <div class="mb-3">
             <label for="language" class="form-label">Language</label>
